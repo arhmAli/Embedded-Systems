@@ -1,0 +1,29 @@
+#include "P18F452.INC"
+LIST P=18F452, F=INHX32, MM=OFF;
+    CONFIG OSC=XT
+    CONFIG WDT=OFF
+      ORG 0
+    GOTO MAIN
+MAIN:
+ MOVLW 0
+ MOVWF TRISB
+ delay_1 EQU 0x05
+ LOOP_1 EQU 0X00 
+ MOVLW 1100100
+ MOVWF LOOP_1
+ TOTAL EQU 0X20
+ MOVLW 0
+ MOVWF TOTAL
+ HERE INCF TOTAL,1
+call delay
+ MOVFF TOTAL,PORTB
+ DECFSZ LOOP_1
+ BRA HERE
+ CLRF PORTB
+ delay
+ movlw 0xff
+ movwf delay_1
+back decfsz delay_1,f
+ bra back
+ return
+END
