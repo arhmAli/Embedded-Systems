@@ -1,4 +1,6 @@
-%direction control
+// direction control
+//This program is made in MATLAB IDE but given C extension so that it can run in arduino IDE easily
+
 a=arduino()
 for i=1:1;
     writeDigitalPin(a,'D6',0);
