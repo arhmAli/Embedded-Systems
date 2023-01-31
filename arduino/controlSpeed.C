@@ -1,4 +1,4 @@
-// direction control
+// The following program controls the direction of the DC motor first the motor goes clockwisedirection control
 //This program is made in MATLAB IDE but given C extension so that it can run in arduino IDE easily
 
 a=arduino()
